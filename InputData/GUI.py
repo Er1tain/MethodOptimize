@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 root = Tk()
 root.geometry('600x400')
-root.title('Методы оптимизации')
+root.title('Методы оптимизации(минимизации)')
 
 Label(root, text='x1: ', font=("Arial", 14)).place(x=230, y=0)
 x1 = Entry(root)
@@ -31,7 +31,9 @@ m.place(x=265, y = 153)
 
 instruction = Button(root, text="Инструкция",
                       command=lambda: messagebox.showinfo(title="Инструкция" ,message='x1, x2 - начальные координаты точки, change - градиентый спуск,ex, ey - допустимые погрешности для x1, x2, соответственно, M - количество итераций алгоритма'))
-instruction.place(x=185, y=193)
+instruction.place(x=245, y=193)
 
+calculation = Button(root, text="Вычислить")
+calculation.place(x=335, y=193)
 
 root = mainloop()
