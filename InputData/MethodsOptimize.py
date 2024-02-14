@@ -1,5 +1,6 @@
 import rpy2.robjects as robjects
 import rpy2.robjects.packages as packages
+from tkinter import messagebox
 
 class Optimize:
 
@@ -58,9 +59,9 @@ class Optimize:
             y <- x
             f <- function(x1, x2) 2 * x1 ** 2 + x1 * x2 + x2 ** 2
             
-            z <- outer(x, y, f)
+            z <- outer(x, y, f)''')
         
-        
+        r(f'''
             x10_x20_points <- gradient_method({x10}, {x20}, {change}, {ex}, {ey}, {M})
 
             x_points_iteration <- x10_x20_points[seq(from=1, to={M} * 2, by=2)]
@@ -76,3 +77,16 @@ class Optimize:
                 }})
             
         ''')
+
+        messagebox.showinfo(message="Найден минимум!")
+
+    def FastestOptMethod(x10, x20, change, ex, ey, M):
+        pass
+
+    def NewtonRafson(x10, x20, change, ex, ey, M):
+        pass
+
+    def CoordMethod(x10, x20, change, ex, ey, M):
+        pass
+
+        
