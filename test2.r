@@ -3,8 +3,6 @@ library(future)
 plan(sequential)
 source("Gradient_method.r")
 
-
-
 x <- seq(-20, 20)
 y <- x
 f <- function(x1, x2){
