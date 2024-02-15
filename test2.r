@@ -25,7 +25,7 @@ y_points_iteration <- x10_x20_points[seq(from=2, to=M * 2, by=2)]
 
 
 par3d(windowRect = c(20, 30, 800, 800))
-persp3d(x, y, z, col="#d3e90ef8", )
+persp3d(x, y, z, col="#d3e90ef8", theta=3)
  for (i in 1:length(x_points_iteration)) 
    future({
       Sys.sleep(1)

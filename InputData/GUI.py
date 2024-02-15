@@ -32,16 +32,22 @@ m.place(x=265, y = 153)
 
 instruction = Button(root, text="Инструкция",
                       command=lambda: messagebox.showinfo(title="Инструкция" ,message='x1, x2 - начальные координаты точки, change - градиентый спуск,ex, ey - допустимые погрешности для x1, x2, соответственно, M - количество итераций алгоритма'))
-instruction.place(x=245, y=193)
+instruction.place(x=275, y=193)
 
-def calculate_func():
+def calculate():
     try:
         Optimize.GradientMethod(float(x1.get()), float(x2.get()), float(change.get()), float(ex.get()), float(ey.get()), int(m.get()))
     except ValueError:
         messagebox.showerror(message="1-5 параметры дробные, 6 натуральный")
 
 
-calculation = Button(root, text="Вычислить", command=calculate_func)
-calculation.place(x=335, y=193)
+
+#Create button for all methods
+calculation = Button(root, text="Градиентный спуск", command=calculate)
+calculation.place(x=195, y=243)
+
+
+
+#
 
 root = mainloop()
